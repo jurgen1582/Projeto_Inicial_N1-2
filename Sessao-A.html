@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AvaliaçãoN1</title>
+	<meta charset="UTF-8">
+
+    <script>
+		function calcular(n) {
+            n = parseInt(n,10)
+			var r = 2;
+            var listas = [];
+            if(n < 0){
+                document.getElementById("retorno").innerHTML ="Valor Invalido.";
+                document.getElementById("retorno2").innerHTML = "Valor Invalido.";
+				return false;
+            }
+
+            while(n >= 0){
+                listas.push(n);
+                n = n - r;
+                
+            }
+			document.getElementById("retorno").innerHTML = "Lista de Valores: " + listas;
+            document.getElementById("retorno2").innerHTML = "Valor da Soma: " + listas.reduceRight(minhaFun);
+            return false;
+
+            function minhaFun(total,num){
+                return total + num
+            }
+		}
+	</script>
+</head>
+<body>
+	<h1>Exercicio 2.A</h1>
+    <p>Digite no campo abaixo um valor para o sistema calcular e imprimir a LISTA dos números
+        pares maiores do que zero desse número NÃO NEGATIVO!!</p>
+	<form onsubmit="return calcular(this.pnome.value)">
+		<input type="number" name="pnome" placeholder="digite um valor">
+		<input type="submit" value="OK">
+        <p id="retorno"></p>
+        <p id="retorno2"></p>
+	</form>
+
+</body>
+</html>

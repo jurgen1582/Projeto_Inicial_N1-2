@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AvaliaçãoN1</title>
+	<meta charset="UTF-8">
+
+    <script>
+		function calcular(n) {
+			var r = 0;
+            if(n < 0){
+                document.getElementById("retorno").innerHTML ="Valor Invalido.";
+				return false;
+            }
+
+			for (let i = 0; i <= n; i+=2) {
+				r += i
+			}
+
+			document.getElementById("retorno").innerHTML = "Valor: " + r;
+            return false;
+		}
+	</script>
+</head>
+<body>
+	<h1>Exercicio 2.B</h1>
+	<form onsubmit="return calcular(this.pnome.value)">
+		<input type="text" name="pnome" placeholder="digite um valor">
+		<input type="submit" value="OK">
+        <p id="retorno"></p>
+	</form>
+
+</body>
+</html>
